@@ -52,6 +52,10 @@ module Mendeley
         request(File.join("authored", URI.escape(name)))
       end
 
+      def self.in_group(group_id, page=0)
+        request(File.join("groups", group_id, "docs"), {:details => true, :page => page})
+      end
+
     end
 
   end
